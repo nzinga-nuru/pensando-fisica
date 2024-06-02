@@ -1,37 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const repoName = 'pensando-fisica';  // Adicione o nome do repositório aqui
+    const repoName = 'pensando-fisica';  // Substitua pelo nome correto do seu repositório
 
-    // Carregar o menu principal
-    fetch(`/${repoName}/menu.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('menu-container').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading menu:', error));
+    const loadHTML = (url, containerId) => {
+        console.log(`Loading ${url} into ${containerId}`);
+        fetch(url)
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById(containerId).innerHTML = data;
+                console.log(`${url} loaded successfully into ${containerId}`);
+            })
+            .catch(error => console.error(`Error loading ${url}:`, error));
+    };
 
-    // Verificar se há um submenu a ser carregado
+    loadHTML(`/${repoName}/menu.html`, 'menu-container');
+
     const submenuMapping = {
-        'mecanica_classica': `/${repoName}/submenu-mecanica_classica1.html`,  // Verifique se o nome do arquivo está correto
+        'mecanica_classica': `/${repoName}/submenu-mecanica_classica.html`,
         'fisica_experimental': `/${repoName}/submenu-experimental.html`,
-        // Adicione outros mapeamentos de disciplina para submenu aqui
     };
 
     const pathParts = window.location.pathname.split('/');
     const disciplina = pathParts.length > 2 ? pathParts[2] : null;
+    console.log('Disciplina:', disciplina);
     if (disciplina && submenuMapping[disciplina]) {
-        fetch(submenuMapping[disciplina])
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('submenu-container').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading submenu:', error));
+        loadHTML(submenuMapping[disciplina], 'submenu-container');
+    } else {
+        console.log('No submenu to load for:', disciplina);
     }
 
-    // Carregar o footer
-    fetch(`/${repoName}/footer.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-container').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading footer:', error));
+    loadHTML(`/${repoName}/footer.html`, 'footer-container');
 });
