@@ -1,0 +1,187 @@
+/*************************** HTML Settting ***************************/
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    text-align: justify;
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    color: #40514E;  
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 0.5rem; /* Ajuste o padding conforme necessário */
+}
+
+#content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#menu-container {
+    padding: 1rem;;  /* Ajuste este valor para mover o menu mais para a direita */
+}
+
+#submenu-container {
+    background-color: #f4f4f4;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    height: 100vh; /* Para ocupar toda a altura da viewport */
+    overflow-y: auto; /* Adicionar rolagem se o conteúdo for longo */
+}
+
+#footer-container {
+    margin-top: auto;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-top: 2px solid #ddd; /* Linha de separação */
+}
+
+.list-group-item > a {
+    text-decoration: none;
+    color: #40514E;
+}
+
+.list-group-item > a:hover {
+    text-decoration: underline;
+}
+
+.list-group-item {
+    border: none;
+    padding-left: 0;
+}
+
+.container{
+    display: flex;
+    flex: 1;
+    margin-top: 10px;  /* Ajuste o margin-top conforme necessário */
+    margin-left: 20px; /* Ajuste o margin-left conforme necessário */
+    margin-right: 20px; /* Ajuste o margin-left conforme necessário */
+}
+
+aside{
+    background-color: #f4f4f4;
+    padding-top: 5rem;
+    margin-left: 10px;
+    width: 220px;  /* Ajuste a largura conforme necessário */
+    margin-right: 10px; /* Ajuste o margin-right conforme necessário */
+}
+
+main {
+    flex: 1;
+    padding: 1rem;
+
+}
+
+
+ul.submenu {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+ul.submenu li {
+    margin-bottom: 0.5rem; /* Espaçamento entre itens do submenu */
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+
+h1{
+    font-size: 2.5rem;
+    margin: 50px auto 0 auto;
+    font-family: 'Sacramento', cursive;
+    line-height: 2;
+    color: #11999E;
+}
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #11999E;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+
+h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.35rem;
+    color: #11999E;
+}
+
+a{
+    color: #11999E;
+    font-family: 'Merriweather', serif;
+    text-decoration: none;
+    margin: 10px 20px;
+}
+
+a:hover{
+    color: #11999E;
+}
+
+hr{
+    border: none;
+    border-top: dotted #EAF6F6 6px;
+    width: 5%;
+    margin: 100px auto;
+}
+
+
+
+/* configurando apresentação de código python */
+.notebook-container {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.iframe-container {
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+}
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+iframe {
+    width: 100%;
+    height:40vh;
+    border: none;
+}
