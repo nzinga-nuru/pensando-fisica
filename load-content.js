@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Carregar o menu principal
-    fetch('/menu.html')
+    fetch('/pensando-fisica/menu.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('menu-container').innerHTML = data;
@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Verificar se há um submenu a ser carregado
     const submenuMapping = {
-        'mecanica_classica': '/submenu-mecanica_classica.html',
-        'fisica_experimental': '/submenu-experimental.html',
+        'mecanica_classica': '/pensando-fisica/submenu-mecanica_classica.html',
+        'fisica_experimental': '/pensando-fisica/submenu-experimental.html',
         // Adicione outros mapeamentos de disciplina para submenu aqui
     };
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Carregar o footer
-    fetch('/footer.html')
+    fetch('/pensando-fisica/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
