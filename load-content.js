@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const repoName = 'pensando-fisica';  // Adicione o nome do repositório aqui
+
     // Carregar o menu principal
-    fetch('/pensando-fisica/menu.html')
+    fetch(`/${repoName}/menu.html`)
         .then(response => response.text())
         .then(data => {
             document.getElementById('menu-container').innerHTML = data;
@@ -9,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Verificar se há um submenu a ser carregado
     const submenuMapping = {
-        'mecanica_classica': '/pensando-fisica/submenu-mecanica_classica.html',
-        'fisica_experimental': '/pensando-fisica/submenu-experimental.html',
+        'mecanica_classica': `/${repoName}/submenu-mecanica_classica1.html`,  // Verifique se o nome do arquivo está correto
+        'fisica_experimental': `/${repoName}/submenu-experimental.html`,
         // Adicione outros mapeamentos de disciplina para submenu aqui
     };
 
@@ -26,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Carregar o footer
-    fetch('/pensando-fisica/footer.html')
+    fetch(`/${repoName}/footer.html`)
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
