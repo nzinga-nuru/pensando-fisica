@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const repoName = 'pensando-fisica';  // Substitua pelo nome correto do seu repositório
+    //const repoName = 'pensando-fisica';  // Substitua pelo nome correto do seu repositório
 
     const loadHTML = (url, containerId) => {
         console.log(`Loading ${url} into ${containerId}`);
@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error(`Error loading ${url}:`, error));
     };
 
-    loadHTML(`/${repoName}/menu.html`, 'menu-container');
+    //loadHTML(`/${repoName}/menu.html`, 'menu-container');
+    loadHTML(`/menu.html`, 'menu-container');
 
     const submenuMapping = {
         'mecanica_classica': `/${repoName}/submenu-mecanica_classica.html`,
@@ -31,5 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('No submenu to load for:', disciplina);
     }
 
-    loadHTML(`/${repoName}/footer.html`, 'footer-container');
+    //loadHTML(`/${repoName}/footer.html`, 'footer-container');
+    loadHTML(`/footer.html`, 'footer-container');
 });
